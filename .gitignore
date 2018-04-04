@@ -1,0 +1,11 @@
+*.pyc
+*.swp
+*~
+*.tmp
+*.idea
+*.log
+*.bak
+search_service/data/*
+data
+sug/definition.py
+

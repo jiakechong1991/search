@@ -1,0 +1,68 @@
+{
+  "microdegree":{
+    "properties": {
+      "microdegree_key": {
+        "type": "keyword"
+      },
+      "microdegree_title": {
+        "analyzer": "ik_max_word",
+        "search_analyzer": "simple",
+        "term_vector": "with_positions_offsets",
+        "type": "text"
+      },
+      "microdegree_sub_title": {
+        "analyzer": "ik_max_word",
+        "search_analyzer": "simple",
+        "term_vector": "with_positions_offsets",
+        "type": "text"
+      },
+      "picture": {
+        "type": "keyword"
+      },
+      "course_ids": {
+        "type": "keyword"
+      },
+      "course_info_list": {
+        "type": "nested",
+        "properties": {
+          "course_id":{
+            "type": "keyword"
+          },
+          "name": {
+            "analyzer": "ik_max_word",
+            "search_analyzer": "simple",
+            "term_vector": "with_positions_offsets",
+            "type": "text"
+          },
+          "subtitle": {
+            "analyzer": "ik_max_word",
+            "search_analyzer": "simple",
+            "term_vector": "with_positions_offsets",
+            "type": "text"
+          },
+          "about": {
+            "analyzer": "ik_max_word",
+            "search_analyzer": "simple",
+            "term_vector": "with_positions_offsets",
+            "type": "text"
+          },
+          "comment_org": {
+            "analyzer": "ik_max_word",
+            "search_analyzer": "simple",
+            "term_vector": "with_positions_offsets",
+            "type": "text"
+          },
+          "status": {
+            "type": "keyword"
+          },
+          "staffs_searchable": {
+            "analyzer": "ik_max_word",
+            "search_analyzer": "simple",
+            "term_vector": "with_positions_offsets",
+            "type": "text"
+          }
+        }
+      }
+    }
+  }
+}

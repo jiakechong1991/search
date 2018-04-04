@@ -1,0 +1,50 @@
+{
+  "staffinfo":{
+      "properties":{
+        "staffinfo_id": {
+            "type": "keyword"
+          },
+        "staffinfo_name": {
+            "type": "text",
+            "analyzer": "ik_max_word",
+            "search_analyzer": "simple"
+          },
+        "staffinfo_org_id": {
+            "type": "keyword"
+          },
+        "staffinfo_org": {
+            "type": "keyword"
+          },
+        "staffinfo_company": {
+            "type": "text",
+            "analyzer": "ik_max_word",
+            "search_analyzer": "simple"
+          },
+        "staffinfo_department": {
+            "type": "text",
+            "analyzer": "ik_max_word",
+            "search_analyzer": "simple"
+          },
+        "staffinfo_position": {
+            "type": "text",
+            "analyzer": "ik_max_word",
+            "search_analyzer": "simple"
+          },
+        "staffinfo_avatar": {
+            "type": "keyword"
+          },
+        "staffinfo_about": {
+            "type": "text",
+            "analyzer": "ik_max_word"
+          },
+        "staffinfo_course_num":{
+          "type": "long"
+        },
+        "ut": {
+          "type": "date"
+        }
+      }
+  }
+}
+
+

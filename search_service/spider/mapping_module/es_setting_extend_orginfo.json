@@ -1,0 +1,24 @@
+{
+  "orginfo":{
+      "properties":{
+        "orginfo_id": {
+          "type": "keyword"
+        },
+        "orginfo_org": {
+          "type": "keyword"
+        },
+        "orginfo_logo": {
+          "type": "keyword"
+        },
+        "orginfo_about": {
+          "analyzer": "ik_max_word",
+          "type": "text"
+        },
+        "orginfo_name": {
+          "analyzer": "ik_max_word",
+          "type": "text"
+        }
+      }
+  }
+}
+

@@ -1,0 +1,154 @@
+{
+    "mappings": {
+         "_default_": {
+             "dynamic_templates": [
+               {
+                  "string_match": {
+                     "mapping": {
+                        "type": "keyword"
+                     },
+                     "match": "*",
+                     "match_mapping_type": "string"
+                  }
+               }
+            ],
+            "_all": {
+               "enabled": false
+            }
+        },
+        "course":{
+          "properties":{
+              "cid_name": {
+                    "analyzer": "ik_max_word",
+                    "search_analyzer": "simple",
+                    "term_vector" : "with_positions_offsets",
+                    "type": "text"
+                }
+          }
+        },
+        "title": {
+            "_parent": {
+                "type": "course"
+            },
+            "properties": {
+                "title": {
+                    "analyzer": "ik_max_word",
+                    "search_analyzer": "simple",
+                    "term_vector" : "with_positions_offsets",
+                    "type": "text"
+                }
+            }
+        },
+        "category": {
+            "_parent": {
+                "type": "course"
+            },
+            "properties": {
+                "cid_name": {
+                    "analyzer": "ik_max_word",
+                    "search_analyzer": "simple",
+                    "term_vector" : "with_positions_offsets",
+                    "type": "text"
+                }
+            }
+        },
+        "structure": {
+            "_parent": {
+                "type": "course"
+            },
+            "properties": {
+                "name": {
+                    "analyzer": "ik_max_word",
+                    "search_analyzer": "simple",
+                    "term_vector" : "with_positions_offsets",
+                    "type": "text"
+                },
+                "structure": {
+                    "analyzer": "ik_max_word",
+                    "search_analyzer": "simple",
+                    "term_vector" : "with_positions_offsets",
+                    "type": "text"
+                }
+            }
+        },
+        "about": {
+            "_parent": {
+                "type": "course"
+            },
+            "properties": {
+                "about": {
+                    "analyzer": "ik_max_word",
+                    "search_analyzer": "simple",
+                    "term_vector" : "with_positions_offsets",
+                    "type": "text"
+                }
+            }
+        },
+        "staff": {
+            "_parent": {
+                "type": "course"
+            },
+            "properties": {
+                "name": {
+                    "analyzer": "ik_max_word",
+                    "search_analyzer": "simple",
+                    "term_vector" : "with_positions_offsets",
+                    "type": "text"
+                },
+                "company": {
+                    "analyzer": "ik_max_word",
+                    "search_analyzer": "simple",
+                    "term_vector" : "with_positions_offsets",
+                    "type": "text"
+                },
+                "position": {
+                    "analyzer": "ik_max_word",
+                    "search_analyzer": "simple",
+                    "term_vector" : "with_positions_offsets",
+                    "type": "text"
+                },
+                "department": {
+                    "analyzer": "ik_max_word",
+                    "search_analyzer": "simple",
+                    "term_vector" : "with_positions_offsets",
+                    "type": "text"
+                }
+            }
+        },
+        "fragment": {
+            "properties": {
+                "frag_title": {
+                    "analyzer": "ik_max_word",
+                    "term_vector" : "with_positions_offsets",
+                    "type": "text"
+                },
+                "frag_desc": {
+                    "analyzer": "ik_max_word",
+                    "term_vector" : "with_positions_offsets",
+                    "type": "text"
+                }
+            }
+        },
+        "query": {
+            "_parent": {
+                "type": "course"
+            }
+        },
+        "related_query": {
+            "_parent": {
+                "type": "course"
+            }
+        },
+        "fragment_query": {
+            "_parent": {
+                "type": "fragment"
+            }
+        },
+        "fragment_related_query": {
+            "_parent": {
+                "type": "fragment"
+            }
+        }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+{
+  "creditcourse":{
+      "properties":{
+        "creditcoursetp_about": {
+          "type": "text",
+          "analyzer": "ik_max_word"
+        },
+        "creditcoursetp_l2_id": {
+          "type": "keyword"
+        },
+        "creditcoursetp_category_id": {
+          "type": "keyword"
+        },
+        "creditcoursetp_course_id": {
+          "type": "keyword"
+        },
+        "creditcoursetp_is_apply":{
+          "type": "keyword"
+        },
+        "creditcoursetp_parent_id":{
+          "type": "keyword"
+        },
+        "creditcoursetp_l1_name": {
+          "type": "text",
+          "analyzer": "ik_max_word"
+        },
+        "creditcoursetp_subtitle":{
+          "type": "text",
+          "analyzer": "ik_max_word"
+        },
+        "creditcoursetp_org": {
+          "type": "keyword"
+        },
+        "creditcoursetp_serialized": {
+          "type": "keyword"
+        },
+        "creditcoursetp_status": {
+          "type": "long"
+        },
+        "creditcoursetp_platform_num": {
+          "type": "long"
+        },
+        "creditcoursetp_name": {
+          "type": "text",
+          "analyzer": "ik_max_word"
+        },
+        "creditcoursetp_student_num": {
+          "type": "long"
+        },
+        "creditcoursetp_is_enroll": {
+          "type": "keyword"
+        },
+        "creditcoursetp_creditcourse_row_id":{
+          "type": "keyword"
+        },
+        "creditcoursetp_l1_id": {
+           "type": "keyword"
+        },
+        "creditcoursetp_owner": {
+          "type": "keyword"
+        },
+        "creditcoursetp_stage_id": {
+          "type": "keyword"
+        },
+        "creditcoursetp_visible": {
+           "type": "keyword"
+        },
+        "creditcoursetp_end": {
+          "type": "date"
+        },
+        "creditcoursetp_start": {
+          "type": "date"
+        }
+      }
+  }
+}

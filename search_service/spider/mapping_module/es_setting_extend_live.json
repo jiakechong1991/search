@@ -1,0 +1,36 @@
+{
+  "live":{
+      "properties":{
+        "live_key": {
+          "type": "keyword"
+        },
+        "thumbnail": {
+          "type": "keyword"
+        },
+        "status": {
+          "type": "long"
+        },
+        "live_cast_reading_id": {
+          "type": "keyword"
+        },
+        "live_item_title": {
+          "analyzer": "ik_max_word",
+          "search_analyzer": "simple",
+          "term_vector" : "with_positions_offsets",
+          "type": "text"
+        },
+        "live_album_title": {
+          "analyzer": "ik_max_word",
+          "search_analyzer": "simple",
+          "term_vector" : "with_positions_offsets",
+          "type": "text"
+        },
+        "live_album_sub_title": {
+          "analyzer": "ik_max_word",
+          "search_analyzer": "simple",
+          "term_vector" : "with_positions_offsets",
+          "type": "text"
+        }
+      }
+  }
+}

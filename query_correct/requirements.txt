@@ -1,0 +1,3 @@
+numpy==1.13.1
+pyxdameraulevenshtein==1.4.1
+pypinyin==0.8.5
