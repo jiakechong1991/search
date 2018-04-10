@@ -72,6 +72,8 @@ class Corrector(object):
         return False
        
     def get_homophones(self, clean_word):
+        """获取与这个词最接近的同音拼音或者近音拼音"""
+        # 利用2-gram来操作
         homophones = defaultdict(int)
         word_pinyins = self.pinyin_generator.get_word_simple_pinyins(clean_word, pypinyin.NORMAL)
         for word_pinyin in word_pinyins[:10]:
@@ -86,6 +88,7 @@ class Corrector(object):
                 weight = hit.weight
                 if weight > homophones[output]:
                     homophones[output] = weight
+        print "word_pinyins:", word_pinyins
         return homophones
     
     def get_candidate_from_homophones(self, clean_word, homophones):
@@ -173,6 +176,7 @@ class Corrector(object):
             return 0
  
         ngram_words = {}
+        # 获取query的拼音 ["南京"]
         word_pinyins = self.pinyin_generator.get_word_simple_pinyins(clean_word, pypinyin.NORMAL)
         for word_pinyin in word_pinyins:
             # 拼音
@@ -319,19 +323,22 @@ class Corrector(object):
                 response['candidate'] = [forced_word]
             return response
 
-        # 2. 精确匹配
+        # 2. 精确匹配：看看这个词是不是在 non_chinese_ngram 或者chinese_ngram中精确匹配到呢？
+        # 这个策略是有问题的：1-2gram 对这种term精确匹配没有意义
+        # 无效代码
         if self.has_exact_match(clean_word):
             response['status'] = 'right'
             response['msg'] = u'精确匹配'
             return response
 
-        # 3. 同音策略
+        # 3. 同音异形字策略
         homophones = self.get_homophones(clean_word) 
         if homophones:
             homophones_response = self.get_candidate_from_homophones(clean_word, homophones)
             return homophones_response
 
         # 4. 形近字
+        # 对那些常见的近似字做笛卡尔积，进行替换，这样会造成doc大量的上升
         similar_forms = self.get_similar_forms(clean_word)
         if similar_forms:
             response['status'] = 'need_correct'

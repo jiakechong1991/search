@@ -47,7 +47,9 @@ def replace_poses(chars, poses, replace_c):
     new_chars += chars[poses[-1]+1:]
     return new_chars
 
+
 def discard_all_digits(chars):
+    """删除拼音中的数字"""
     digit_poses = []
     for i, c in enumerate(chars):
         if in_range(c, digit_range):
